@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  transmission:
+    image: linuxserver/transmission
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 500M
+    container_name: transmission
+    environment:
+      - PUID=1000 # User ID for the Transmission container)
+      - PGID=1000 # Group ID for the Transmission container
+      - TZ=Pacific/Tahiti # Timezone setting
+      - USER=myUserToAccessViaWeb
+      - PASS=mySuperPassword
+    volumes:
+      - /media/my_user/DOCKER-STORAGE/SHARE/DOWNLOADS:/downloads # Directory for downloads
+      - /media/my_user/DOCKER-STORAGE/dock_serv_torrent/config:/config  # path to config Transmission
+    ports:
+      - "9091:9091"  # Interface Port for web Transmission 
+    restart: unless-stopped
