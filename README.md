@@ -6,15 +6,12 @@
 # Usage
 ## To start the Transmission container, use the following command:
 ```
-sh
-Copier le code
 docker-compose up -d
 ```
 **_This command will start the Transmission service in detached mode._**
 
-
 # Access
-After starting the container, you can access the Transmission web interface 
+After starting the container, you can access the Transmission web interface  
 by navigating to `http://<your-server-ip>:9091` in your web browser.
 
 # Notes
@@ -22,3 +19,4 @@ by navigating to `http://<your-server-ip>:9091` in your web browser.
 - Adjust the USER and PASS environment variables to secure your Transmission web interface.
 - Modify the PUID and PGID variables if necessary to match your system's user and group IDs.
 - This configuration ensures a controlled resource usage for the Transmission service, providing a balance between performance and efficiency.
+- The value 0.5 indicates a fraction of the total available CPU on the host. If your host has 4 CPUs, the container can use the equivalent of 2 CPUs (4 * 0.5).
