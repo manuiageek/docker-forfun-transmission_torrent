@@ -9,7 +9,7 @@ services:
           memory: 500M
     container_name: transmission
     environment:
-      - PUID=1000 # User ID for the Transmission container)
+      - PUID=1000 # User ID for the Transmission container
       - PGID=1000 # Group ID for the Transmission container
       - TZ=Pacific/Tahiti # Timezone setting
       - USER=myUserToAccessViaWeb
