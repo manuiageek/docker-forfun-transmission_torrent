@@ -1,4 +1,4 @@
-# Services Transmission
+# Service Transmission
 - Image: linuxserver/transmission
 - Container Name: transmission
 - Restart Policy: unless-stopped
